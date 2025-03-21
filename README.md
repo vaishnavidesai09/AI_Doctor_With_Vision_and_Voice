@@ -121,6 +121,7 @@ def text_to_speech_with_eleven_labs(input_text, output_filepath):
     audio = client.generate(text=input_text, voice="Aria", output_format='mp3_22050_32', model='eleven_turbo_v2')
     elevenlabs.save(audio, output_filepath)
 ```
+![image](https://github.com/user-attachments/assets/1146ae46-d5fe-4733-bd2f-f0d8404736fa)
 
 ---
 
