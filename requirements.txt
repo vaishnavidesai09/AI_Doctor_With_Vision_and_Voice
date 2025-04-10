@@ -1,0 +1,31 @@
+# Core Python libraries
+python-dotenv
+os
+platform
+subprocess
+
+# Image and audio processing
+pydub
+Pillow
+base64
+
+# Voice input/output
+speechrecognition
+gtts
+elevenlabs==0.2.27  # Make sure to install the right version
+
+# Web UI
+gradio
+
+# Audio recording dependencies
+pyaudio  # Requires portaudio installed on system
+ffmpeg-python
+
+# GROQ SDK
+groq
+
+# Optional: for logging
+loguru
+
+# Optional: if using openai-whisper for transcription fallback
+openai-whisper
