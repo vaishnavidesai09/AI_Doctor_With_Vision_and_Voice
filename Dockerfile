@@ -1,8 +1,13 @@
 # Use the official Python 3.11 image as the base image
 FROM python:3.11-slim
 
-# Install system dependencies (like portaudio)
-RUN apt-get update && apt-get install -y portaudio19-dev
+# Install system dependencies (like portaudio and build tools)
+RUN apt-get update && apt-get install -y \
+    portaudio19-dev \
+    build-essential \
+    gcc \
+    python3-dev \
+    libsndfile1-dev
 
 # Set the working directory in the container
 WORKDIR /app
