@@ -6,5 +6,5 @@ pydub
 gtts
 elevenlabs
 gradio
-
+PyAudio
 
