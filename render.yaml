@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ai-doctor-docker
+    env: docker
+    repo: https://github.com/vaishnavidesai09/AI_Doctor_With_Vision_and_Voice
+    branch: main
+    plan: free
+    region: oregon
+    envVars:
+      - key: GROQ_API_KEY
+        value: your_groq_api_key
+      - key: ELEVEN_LABS_API_KEY
+        value: your_eleven_labs_key
