@@ -35,6 +35,12 @@ def process_inputs(audio_file_path, image_filepath):
     return speech_to_text_output, doctor_response, voice_of_doctor
 
 
+# Get the port from the environment variable, default to 10000 if not set
+port = int(os.getenv("PORT", 10000))           
+            
+            
+
+
 # Create the interface
 iface = gr.Interface(
     fn=process_inputs,
