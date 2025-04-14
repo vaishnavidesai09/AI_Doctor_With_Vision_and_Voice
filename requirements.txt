@@ -1,4 +1,4 @@
-groq==0.5.0  # Replace with actual version if known, otherwise remove version constraint
+groq
 python-dotenv
 base64io
 speechrecognition
