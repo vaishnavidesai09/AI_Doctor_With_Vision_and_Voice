@@ -7,7 +7,10 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     gcc \
     python3-dev \
-    libsndfile1-dev
+    libsndfile1-dev \
+    libportaudio2 \
+    libportaudiocpp0 \
+    portaudio19-dev
 
 # Set the working directory in the container
 WORKDIR /app
@@ -15,6 +18,9 @@ WORKDIR /app
 # Copy the requirements.txt and your Gradio app to the container
 COPY requirements.txt /app/
 COPY gradio_app.py /app/
+COPY brain_of_the_doctor.py /app/
+COPY voice_of_doctor.py /app/
+COPY voice_of_patient.py /app/
 
 # Install Python dependencies from the requirements file
 RUN pip install --no-cache-dir -r requirements.txt
