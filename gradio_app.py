@@ -18,9 +18,9 @@ system_prompt="""You have to act as a professional doctor, i know you are not bu
             Keep your answer concise (max 2 sentences). No preamble, start your answer right away please"""
 
 
-def process_inputs(audio_filepath, image_filepath):
+def process_inputs(audio_file_path, image_filepath):
     speech_to_text_output = transcribe_with_groq(stt_model="whisper-large-v3",
-                                            audio_file_path="patient_voice_test.mp3",
+                                            audio_file_path=audio_file_path,
                                             GROQ_API_KEY=os.environ.get('GROQ_API_KEY '))
 
 
