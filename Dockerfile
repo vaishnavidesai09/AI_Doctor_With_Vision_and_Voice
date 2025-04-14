@@ -26,14 +26,8 @@ COPY voice_of_patient.py /app/
 # Install Python dependencies from the requirements file
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port for your Gradio app (default is 7860)
-EXPOSE 7860
-
-# Run your Gradio app
-CMD ["python", "gradio_app.py"]
-
-# Expose the port for your Gradio app (default is 7860)
-EXPOSE 7860
+# Expose the port for your Gradio app (default is 10000 for Render)
+EXPOSE 10000
 
 # Run your Gradio app
 CMD ["python", "gradio_app.py"]
