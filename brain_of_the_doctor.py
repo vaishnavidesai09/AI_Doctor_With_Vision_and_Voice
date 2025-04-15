@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv(dotenv_path=".env")
 
-GROQ_API_KEY = os.environ.get('GROQ_API_KEY ')
+GROQ_API_KEY = os.environ.get('GROQ_API_KEY')
 
 
 #step 2 : Convert image into required format
@@ -22,7 +22,7 @@ def encode_image(image_path):
 #step 3 : setup multimodal llm
 from groq import Groq
 query= 'Is there something wrong with my face?'
-model = 'llama-3.2-90b-vision-preview'
+model = 'llama3-70b-8192'
 
 
 def analyse_image_with_query(query,model,encoded_image):
