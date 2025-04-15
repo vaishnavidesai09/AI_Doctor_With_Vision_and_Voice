@@ -22,7 +22,7 @@ def encode_image(image_path):
 #step 3 : setup multimodal llm
 from groq import Groq
 query= 'Is there something wrong with my face?'
-model = 'llava-llama-3-8b'
+model = 'llama-3.2-11b-vision-preview'
 
 
 
