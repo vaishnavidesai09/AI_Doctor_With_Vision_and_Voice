@@ -1,7 +1,6 @@
-# Use the official Python 3.11 image as the base image
 FROM python:3.11-slim
 
-# Install system dependencies (like portaudio, build tools, and ffmpeg)
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     portaudio19-dev \
     build-essential \
@@ -11,23 +10,27 @@ RUN apt-get update && apt-get install -y \
     libportaudio2 \
     libportaudiocpp0 \
     ffmpeg \
-    libsndfile1
+    alsa-utils \
+    pulseaudio \
+    libasound2 \
+    libasound2-dev \
+    && apt-get clean
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the requirements.txt and your Gradio app to the container
+# Copy application files
 COPY requirements.txt /app/
 COPY gradio_app.py /app/
 COPY brain_of_the_doctor.py /app/
 COPY voice_of_doctor.py /app/
 COPY voice_of_patient.py /app/
 
-# Install Python dependencies from the requirements file
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port for your Gradio app (default is 10000 for Render)
+# Expose the application port
 EXPOSE 10000
 
-# Run your Gradio app
+# Set the default command
 CMD ["python", "gradio_app.py"]
