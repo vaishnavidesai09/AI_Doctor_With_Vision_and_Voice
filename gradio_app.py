@@ -21,7 +21,7 @@ system_prompt="""You have to act as a professional doctor, i know you are not bu
 def process_inputs(audio_file_path, image_filepath):
     speech_to_text_output = transcribe_with_groq(stt_model="whisper-large-v3",
                                             audio_file_path=audio_file_path,
-                                            GROQ_API_KEY=os.environ.get('GROQ_API_KEY '))
+                                            GROQ_API_KEY=os.environ.get('GROQ_API_KEY'))
 
 
     # Handle the image input
@@ -51,11 +51,14 @@ iface = gr.Interface(
     outputs=[
         gr.Textbox(label="Speech to Text"),
         gr.Textbox(label="Doctor's Response"),
-        gr.Audio("Temp.mp3")
+        gr.Audio(type="filepath", label="Doctor's Voice Response")
+
+
     ],
     title="AI Doctor with Vision and Voice"
 )
 
-iface.launch(debug=True)
+iface.launch(server_name="0.0.0.0", server_port=port, debug=True)
+
 
 #link to visit http://127.0.0.1:7860/
