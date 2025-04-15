@@ -42,7 +42,7 @@ def record_audio(file_path, timeout=20, phrase_time_limit=None):
         logging.error(f"An error occurred: {e}")
 
 audio_file_path='patient_voice_test.mp3'
-record_audio(file_path=audio_file_path)
+#record_audio(file_path=audio_file_path)
 
 #step 2 : setup speech to text -STT-model for transcriptions 
 from groq import Groq
