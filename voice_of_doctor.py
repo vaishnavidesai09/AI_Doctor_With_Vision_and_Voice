@@ -120,7 +120,8 @@ def text_to_speech_with_eleven_labs(input_text, output_filepath, wav_filepath):
     convert_mp3_to_wav(output_filepath, wav_filepath)
 
     # Play audio based on OS
-   ''' os_name = platform.system()
+   ''' 
+   os_name = platform.system()
     try:
         if os_name == "Windows":
             subprocess.run(['powershell', '-c', f'(New-Object Media.SoundPlayer "{wav_filepath}").PlaySync();'])
