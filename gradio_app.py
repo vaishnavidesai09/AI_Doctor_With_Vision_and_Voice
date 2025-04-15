@@ -28,7 +28,7 @@ def process_inputs(audio_file_path, image_filepath):
 
     # Handle the image input
     if image_filepath:
-        doctor_response = analyse_image_with_query(query=system_prompt+speech_to_text_output, encoded_image=encode_image(image_filepath), model="llama3-70b-8192")
+        doctor_response = analyse_image_with_query(query=system_prompt+speech_to_text_output, encoded_image=encode_image(image_filepath),model = 'llava-llama-3-8b')
     else:
         doctor_response = "No image provided for me to analyze"
 
